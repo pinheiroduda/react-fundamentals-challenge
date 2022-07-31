@@ -11,7 +11,7 @@
   --dark-purple: #5E60CE;
 
   --blue: #4EA8DE;
-  --dar-blue: #1E6F9F;
+  --dark-blue: #1E6F9F;
 
   --red: #E25858;
 }
@@ -24,6 +24,7 @@
 
 body {
   background: var(--gray-600);
+  -webkit-font-smoothing: antialiased;
 }
 
 body, input, textarea, button {
