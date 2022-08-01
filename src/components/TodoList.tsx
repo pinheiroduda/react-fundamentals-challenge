@@ -27,7 +27,6 @@ export function ToDoList() {
     <div className={styles.content}>
       <form className={styles.form} onSubmit={handleCreateToDo}>
         <textarea
-          name="todo"
           placeholder="Adicione uma nova tarefa"
           value={newToDo}
           onChange={handleNewToDoChange}
@@ -49,7 +48,7 @@ export function ToDoList() {
         </header>
         <div>
           {toDo.map(todo => {
-            return  <ToDo key={todo}/>
+            return  <ToDo key={todo} content={todo}/>
           })}
         </div>
     </div>
