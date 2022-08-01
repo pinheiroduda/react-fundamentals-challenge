@@ -1,0 +1,82 @@
+.content {
+  margin-top: 4.0625rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.tasks, .doneTasks {
+  font-size: 0.875rem;
+  line-height: 1.0625;
+}
+
+.tasks {
+  color: var(--blue);
+}
+
+.doneTasks {
+  color: var(--purple);
+}
+
+.tasksCounter, .doneTasksCounter {
+  font-size: 0.75rem;
+  line-height: 0.9375;
+  background: var(--gray-400);
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}
+
+.taskBox {
+  margin-top: 1.5625rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: var(--gray-400);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+button {
+  background: transparent;
+  border: 0;
+}
+
+.checkbox {
+  color: var(--blue)
+}
+
+.checkedCheckbox {
+  color: var(--dark-purple);
+}
+
+.checkedCheckbox:hover {
+  color: var(--purple);
+}
+
+.trashIcon {
+  color: var(--gray-300);
+}
+
+.trashIcon:hover {
+  color: var(--red);
+}
+
+.taskText {
+  width: 39.5rem;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.225;
+  padding: 0 1.125rem 0 1rem;
+}
