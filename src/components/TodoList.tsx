@@ -23,6 +23,14 @@ export function ToDoList() {
     setNewToDo(event.target.value);
   }
 
+  function deleteToDo(deletedToDo: string) {
+    const toDoList = toDo.filter(todo => {
+      return todo !== deletedToDo;
+    })
+
+    setToDo(toDoList);
+  }
+
   return (
     <div className={styles.content}>
       <form className={styles.form} onSubmit={handleCreateToDo}>
@@ -48,7 +56,7 @@ export function ToDoList() {
         </header>
         <div>
           {toDo.map(todo => {
-            return  <ToDo key={todo} content={todo}/>
+            return  <ToDo key={todo} content={todo} onDeleteToDo={deleteToDo}/>
           })}
         </div>
     </div>
