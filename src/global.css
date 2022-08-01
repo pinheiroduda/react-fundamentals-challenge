@@ -16,6 +16,10 @@
   --red: #E25858;
 }
 
+:focus {
+  outline: transparent;
+}
+
 * {
   margin: 0;
   padding: 0;

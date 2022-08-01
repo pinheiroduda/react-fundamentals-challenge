@@ -1,5 +1,5 @@
 import { Header } from "./components/Header"
-import { ToDo } from "./components/Todo"
+import { ToDoList } from "./components/TodoList"
 
 import './global.css'
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <ToDo />
+      <ToDoList />
     </>
   )
 }

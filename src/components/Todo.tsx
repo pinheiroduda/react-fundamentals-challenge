@@ -1,17 +1,27 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { CheckCircle, Circle, Trash } from 'phosphor-react'
 import styles from './Todo.module.css'
 
 export function ToDo() {
   return (
     <div className={styles.content}>
-      <form className={styles.form}>
-        <textarea placeholder="Adicione uma nova tarefa"></textarea>
-        <button type="submit">   
-          Criar
-          <FontAwesomeIcon icon={['fat', 'circle-plus']} />
+      <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <li className={styles.tasks}>Tarefas criadas</li>
+            <li className={styles.tasksCounter}>0</li>
+          </div>
+          <div className={styles.headerContent}>
+            <li className={styles.doneTasks}>Concluídas</li>
+            <li className={styles.doneTasksCounter}>0</li>
+          </div>
+      </header>
+      <div className={styles.taskBox}>
+        <button>
+          <Circle size={18} className={styles.checkbox}/>
+          <CheckCircle size={18} weight="fill" className={styles.checkedCheckbox}/>
         </button>
-      </form>
+        <p className={styles.taskText}>Iniciar o desenvolvimento das funcionalidades do desafio.</p>
+        <button><Trash size={16} className={styles.trashIcon}/></button>
+      </div>
     </div>
   )
 }
