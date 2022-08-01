@@ -1,4 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {PlusCircle} from 'phosphor-react';
+import { ToDo } from './Todo'
 
 import styles from './TodoList.module.css'
 
@@ -9,11 +10,11 @@ export function ToDoList() {
         <textarea placeholder="Adicione uma nova tarefa"></textarea>
         <button type="submit">   
           Criar
-          <FontAwesomeIcon icon={['fat', 'circle-plus']} />
+          <PlusCircle size={16} />
         </button>
       </form>
       <div>
-        Aqui serão renderizadas as tarefas
+        <ToDo />
       </div>
     </div>
   )

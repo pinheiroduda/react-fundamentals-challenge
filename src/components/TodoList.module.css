@@ -26,6 +26,9 @@
 
 .form button {
   height: 3.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   background: var(--dark-blue);
   color: var(--gray-100);
