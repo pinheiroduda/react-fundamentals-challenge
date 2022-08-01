@@ -22,6 +22,12 @@
   padding: 1rem;
   line-height: 1.375;
   font-weight: 400;
+  color: var(--gray-300);
+}
+
+.form textarea:hover {
+  border: 1px solid var(--dark-purple);
+  border-radius: 8px;
 }
 
 .form button {
