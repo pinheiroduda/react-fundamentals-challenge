@@ -20,10 +20,6 @@ export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncremen
   function handleDeleteToDo() {
     onDeleteToDo(content);
   }
-
-  // useEffect(() => {
-
-  // }, [countToDo]);
   
   return (
     <div className={styles.taskBox}>
