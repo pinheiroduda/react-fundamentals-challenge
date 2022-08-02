@@ -34,7 +34,7 @@ export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncremen
           }
         </button>
         <p className={styles.taskText} style={isChecked ? { textDecorationLine: 'line-through' } : {textDecorationLine: 'none'}}>{content}</p>
-        <button onClick={handleDeleteToDo}><Trash size={16} className={styles.trashIcon} onClick={onDecrementNumberOfToDo}/></button>
+        <button onClick={handleDeleteToDo}><Trash size={16} className={styles.trashIcon} onClick={ isChecked ? {onDecrementNumberOfToDo} && onDecrementToDo : onDecrementNumberOfToDo}/></button>
     </div>
   )
 }
