@@ -1,13 +1,15 @@
 import { CheckCircle, Circle, Trash } from 'phosphor-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Todo.module.css'
 
 interface ToDoProps {
   content: string;
   onDeleteToDo: (deletedToDo: string) => void;
+  onIncrementToDo: () => void;
+  onDecrementToDo: () => void;
 }
 
-export function ToDo({content, onDeleteToDo}: ToDoProps) {
+export function ToDo({content, onDeleteToDo, onIncrementToDo, onDecrementToDo}: ToDoProps) {
   const [isChecked, setIsChecked] = useState(false);
 
   function handleCheck() {
@@ -17,11 +19,18 @@ export function ToDo({content, onDeleteToDo}: ToDoProps) {
   function handleDeleteToDo() {
     onDeleteToDo(content);
   }
+
+  // useEffect(() => {
+
+  // }, [countToDo]);
   
   return (
     <div className={styles.taskBox}>
         <button onClick={handleCheck}>
-          {isChecked ? <CheckCircle size={18} weight="fill" className={styles.checkedCheckbox}/> : <Circle size={18} className={styles.checkbox}/>}
+          {isChecked 
+            ? <CheckCircle size={18} weight="fill" className={styles.checkedCheckbox} onClick={onDecrementToDo}/> 
+            : <Circle size={18} className={styles.checkbox}  onClick={onIncrementToDo}/>
+          }
         </button>
         <p className={styles.taskText}>{content}</p>
         <button onClick={handleDeleteToDo}><Trash size={16} className={styles.trashIcon}/></button>
