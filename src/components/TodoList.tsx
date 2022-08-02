@@ -37,6 +37,10 @@ export function ToDoList() {
     setCountToDoNumber(countToDoNumber + 1);
   }
 
+  function decrementNumberOfToDo() {
+    setCountToDoNumber(countToDoNumber - 1);
+  }
+
   function incrementToDo() {
     setCountToDo(countToDo + 1);
   }
@@ -77,6 +81,7 @@ export function ToDoList() {
                 key={todo}
                 content={todo}
                 onDeleteToDo={deleteToDo}
+                onDecrementNumberOfToDo={decrementNumberOfToDo}
                 onIncrementToDo={incrementToDo}
                 onDecrementToDo={decrementToDo}
               />

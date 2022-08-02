@@ -5,11 +5,12 @@ import styles from './Todo.module.css'
 interface ToDoProps {
   content: string;
   onDeleteToDo: (deletedToDo: string) => void;
+  onDecrementNumberOfToDo: () => void;
   onIncrementToDo: () => void;
   onDecrementToDo: () => void;
 }
 
-export function ToDo({content, onDeleteToDo, onIncrementToDo, onDecrementToDo}: ToDoProps) {
+export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncrementToDo, onDecrementToDo}: ToDoProps) {
   const [isChecked, setIsChecked] = useState(false);
 
   function handleCheck() {
@@ -33,7 +34,7 @@ export function ToDo({content, onDeleteToDo, onIncrementToDo, onDecrementToDo}: 
           }
         </button>
         <p className={styles.taskText} style={isChecked ? { textDecorationLine: 'line-through' } : {textDecorationLine: 'none'}}>{content}</p>
-        <button onClick={handleDeleteToDo}><Trash size={16} className={styles.trashIcon}/></button>
+        <button onClick={handleDeleteToDo}><Trash size={16} className={styles.trashIcon} onClick={onDecrementNumberOfToDo}/></button>
     </div>
   )
 }
