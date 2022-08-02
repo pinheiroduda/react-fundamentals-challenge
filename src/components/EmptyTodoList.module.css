@@ -1,0 +1,20 @@
+.content {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+  padding: 4rem;
+  text-align: center;
+}
+
+img {
+  padding-bottom: 1rem;
+}
+
+p {
+  color: var(--gray-300);
+  line-height: 1.4;
+}
+
+.subtitle {
+  font-weight: 400;
+}

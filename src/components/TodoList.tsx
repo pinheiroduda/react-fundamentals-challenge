@@ -1,5 +1,6 @@
 import {PlusCircle} from 'phosphor-react';
 import { ChangeEvent, useEffect, useState } from 'react';
+import { EmptyToDoList } from './EmptyTodoList';
 import { ToDo } from './Todo'
 
 import styles from './TodoList.module.css'
@@ -77,14 +78,16 @@ export function ToDoList() {
         <div>
           {toDo.map(todo => {
             return  (
-              <ToDo
-                key={todo}
-                content={todo}
-                onDeleteToDo={deleteToDo}
-                onDecrementNumberOfToDo={decrementNumberOfToDo}
-                onIncrementToDo={incrementToDo}
-                onDecrementToDo={decrementToDo}
-              />
+              countToDoNumber === 0
+              ? (<EmptyToDoList />)
+              : (<ToDo
+                  key={todo}
+                  content={todo}
+                  onDeleteToDo={deleteToDo}
+                  onDecrementNumberOfToDo={decrementNumberOfToDo}
+                  onIncrementToDo={incrementToDo}
+                  onDecrementToDo={decrementToDo}
+                />)
             )
           })}
         </div>
