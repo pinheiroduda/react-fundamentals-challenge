@@ -43,3 +43,39 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+
+.header {
+  margin-top: 4.0625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.tasks, .doneTasks {
+  font-size: 0.875rem;
+  line-height: 1.0625;
+}
+
+.tasks {
+  color: var(--blue);
+}
+
+.doneTasks {
+  color: var(--purple);
+}
+
+.tasksCounter, .doneTasksCounter {
+  font-size: 0.75rem;
+  line-height: 0.9375;
+  background: var(--gray-400);
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}
