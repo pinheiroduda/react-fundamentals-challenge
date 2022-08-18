@@ -25,12 +25,32 @@ export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncremen
     <div className={styles.taskBox}>
         <button onClick={handleCheck}>
           {isChecked 
-            ? <CheckCircle size={18} weight="fill" className={styles.checkedCheckbox} onClick={onDecrementToDo} /> 
-            : <Circle size={18} className={styles.checkbox}  onClick={onIncrementToDo} />
+            ? <CheckCircle
+                size={18}
+                weight="fill"
+                className={styles.checkedCheckbox}
+                onClick={onDecrementToDo}
+              /> 
+            : <Circle
+                size={18}
+                className={styles.checkbox}
+                onClick={onIncrementToDo}
+              />
           }
         </button>
-        <p className={styles.taskText} style={isChecked ? { textDecorationLine: 'line-through' } : {textDecorationLine: 'none'}}>{content}</p>
-        <button onClick={handleDeleteToDo}><Trash size={16} className={styles.trashIcon} onClick={ isChecked ? {onDecrementNumberOfToDo} && onDecrementToDo : onDecrementNumberOfToDo}/></button>
+        <p 
+          className={styles.taskText}
+          style={isChecked ? { textDecorationLine: 'line-through' } : {textDecorationLine: 'none'}}
+        >
+          {content}
+        </p>
+        <button onClick={handleDeleteToDo}>
+          <Trash
+            size={16}
+            className={styles.trashIcon}
+            onClick={ isChecked ? {onDecrementNumberOfToDo} && onDecrementToDo : onDecrementNumberOfToDo}
+          />
+        </button>
     </div>
   )
 }
