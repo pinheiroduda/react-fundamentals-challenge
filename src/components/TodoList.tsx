@@ -6,7 +6,7 @@ import { ToDo } from './Todo'
 import styles from './TodoList.module.css'
 
 export function ToDoList() {
-  const [toDo, setToDo] = useState(['']);
+  const [toDo, setToDo] = useState<string[]>([]);
   const [newToDo, setNewToDo] = useState('');
   const [countToDoNumber, setCountToDoNumber] = useState(0);
   const [countToDo, setCountToDo] = useState(0);
@@ -79,17 +79,18 @@ export function ToDoList() {
           {toDo.map(todo => {
             return  (
               countToDoNumber === 0
-              ? (<EmptyToDoList />)
-              : (<ToDo
+              ? <EmptyToDoList />
+              : <ToDo
                   key={todo}
                   content={todo}
                   onDeleteToDo={deleteToDo}
                   onDecrementNumberOfToDo={decrementNumberOfToDo}
                   onIncrementToDo={incrementToDo}
                   onDecrementToDo={decrementToDo}
-                />)
+                />
             )
           })}
+          {console.log(countToDoNumber)}
         </div>
     </div>
   )

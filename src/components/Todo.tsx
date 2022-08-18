@@ -1,5 +1,5 @@
 import { CheckCircle, Circle, Trash } from 'phosphor-react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from './Todo.module.css'
 
 interface ToDoProps {
@@ -10,7 +10,13 @@ interface ToDoProps {
   onDecrementToDo: () => void;
 }
 
-export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncrementToDo, onDecrementToDo}: ToDoProps) {
+export function ToDo({
+  content,
+  onDeleteToDo,
+  onDecrementNumberOfToDo,
+  onIncrementToDo,
+  onDecrementToDo
+  }: ToDoProps) {
   const [isChecked, setIsChecked] = useState(false);
 
   function handleCheck() {
@@ -19,6 +25,11 @@ export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncremen
 
   function handleDeleteToDo() {
     onDeleteToDo(content);
+    onDecrementNumberOfToDo();
+
+    if (isChecked) {
+      onDecrementToDo();
+    }
   }
   
   return (
@@ -40,7 +51,7 @@ export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncremen
         </button>
         <p 
           className={styles.taskText}
-          style={isChecked ? { textDecorationLine: 'line-through' } : {textDecorationLine: 'none'}}
+          style={isChecked ? {textDecorationLine: 'line-through'} : {textDecorationLine: 'none'}}
         >
           {content}
         </p>
@@ -48,7 +59,6 @@ export function ToDo({content, onDeleteToDo, onDecrementNumberOfToDo, onIncremen
           <Trash
             size={16}
             className={styles.trashIcon}
-            onClick={ isChecked ? {onDecrementNumberOfToDo} && onDecrementToDo : onDecrementNumberOfToDo}
           />
         </button>
     </div>
