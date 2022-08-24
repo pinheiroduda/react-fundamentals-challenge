@@ -76,12 +76,12 @@ export function ToDoList() {
             </div>
         </header>
         <div>
-          {toDo.map(todo => {
+          {toDo.map((todo, index) => {
             return  (
               countToDoNumber === 0
               ? <EmptyToDoList />
               : <ToDo
-                  key={todo}
+                  key={index}
                   content={todo}
                   onDeleteToDo={deleteToDo}
                   onDecrementNumberOfToDo={decrementNumberOfToDo}
