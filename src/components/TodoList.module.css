@@ -44,6 +44,15 @@
   line-height: 1.25rem;
 }
 
+.form button:hover:active {
+  background: var(--blue);
+  transition: 0.1s;
+}
+
+.form button:disabled {
+  opacity: 0.9;
+}
+
 .header {
   margin-top: 4.0625rem;
   display: flex;
