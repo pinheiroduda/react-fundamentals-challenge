@@ -58,7 +58,7 @@ export function ToDoList() {
           value={newToDo}
           onChange={handleNewToDoChange}
         />
-        <button type="submit" onClick={countNumberOfToDo}>   
+        <button type="submit" onClick={countNumberOfToDo} disabled={newToDo === ''}>   
           Criar
           <PlusCircle size={16} />
         </button>
