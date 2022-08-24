@@ -79,14 +79,14 @@ export function ToDoList() {
           {(toDo.length === 0) 
               ? <EmptyToDoList />
               : toDo.map((todo, index) => {
-                <ToDo
-                  key={index}
-                  content={todo}
-                  onDeleteToDo={deleteToDo}
-                  onDecrementNumberOfToDo={decrementNumberOfToDo}
-                  onIncrementToDo={incrementToDo}
-                  onDecrementToDo={decrementToDo}
-                />
+                  return <ToDo
+                    key={index}
+                    content={todo}
+                    onDeleteToDo={deleteToDo}
+                    onDecrementNumberOfToDo={decrementNumberOfToDo}
+                    onIncrementToDo={incrementToDo}
+                    onDecrementToDo={decrementToDo}
+                  />
                 })
           }
         </div>
