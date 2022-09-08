@@ -29,8 +29,7 @@ export function ToDo({
 
     if (isChecked) {
       onDecrementToDo();
-    } else {
-      return
+      handleCheck()
     }
   }
   
@@ -58,10 +57,7 @@ export function ToDo({
           {content}
         </p>
         <button onClick={handleDeleteToDo}>
-          <Trash
-            size={16}
-            className={styles.trashIcon}
-          />
+          <Trash size={16} className={styles.trashIcon}/>
         </button>
     </div>
   )
