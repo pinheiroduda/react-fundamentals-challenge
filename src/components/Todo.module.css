@@ -18,7 +18,8 @@ button {
 }
 
 .checkbox:hover {
-  color: var(--dark-blue)
+  color: var(--dark-blue);
+  transition: 0.1s;
 }
 
 .checkedCheckbox {
@@ -27,6 +28,7 @@ button {
 
 .checkedCheckbox:hover {
   color: var(--purple);
+  transition: 0.1s;
 }
 
 .trashIcon {
@@ -35,6 +37,7 @@ button {
 
 .trashIcon:hover {
   color: var(--red);
+  transition: 0.1s;
 }
 
 .taskText {
