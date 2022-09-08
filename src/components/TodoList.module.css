@@ -44,13 +44,9 @@
   line-height: 1.25rem;
 }
 
-.form button:hover:active {
+.form button:not([disabled]):hover {
   background: var(--blue);
   transition: 0.1s;
-}
-
-.form button:disabled {
-  opacity: 0.9;
 }
 
 .header {
