@@ -29,7 +29,6 @@ export function ToDo({
 
     if (isChecked) {
       onDecrementToDo();
-      handleCheck()
     }
   }
   
