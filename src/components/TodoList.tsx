@@ -80,7 +80,7 @@ export function ToDoList() {
               ? <EmptyToDoList />
               : toDo.map((todo, index) => {
                   return <ToDo
-                    key={index}
+                    key={todo+index}
                     content={todo}
                     onDeleteToDo={deleteToDo}
                     onDecrementNumberOfToDo={decrementNumberOfToDo}
