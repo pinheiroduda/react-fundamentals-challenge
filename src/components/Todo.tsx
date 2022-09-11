@@ -34,7 +34,8 @@ export function ToDo({
   }
   
   return (
-    <div className={styles.taskBox}>
+    <div className={styles.container}>
+      <div className={styles.taskBox}>
         <button onClick={handleCheck}>
           {isChecked 
             ? <CheckCircle
@@ -59,6 +60,7 @@ export function ToDo({
         <button onClick={handleDeleteToDo}>
           <Trash size={16} className={styles.trashIcon}/>
         </button>
+      </div>
     </div>
   )
 }

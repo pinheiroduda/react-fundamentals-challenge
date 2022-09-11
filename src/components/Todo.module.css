@@ -1,5 +1,9 @@
+.container:first-child {
+  margin-top: 1.5rem;
+}
+
 .taskBox {
-  margin-top: 1.5625rem;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
