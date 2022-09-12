@@ -1,12 +1,12 @@
 import {PlusCircle} from 'phosphor-react';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { EmptyToDoList } from './EmptyTodoList';
-import { ToDo } from './Todo'
+import { ToDo, ToDoType } from './Todo'
 
 import styles from './TodoList.module.css'
 
 export function ToDoList() {
-  const [toDo, setToDo] = useState<string[]>([]);
+  const [toDo, setToDo] = useState<ToDoType[]>([]);
   const [newToDo, setNewToDo] = useState<string>('');
   const [countToDoNumber, setCountToDoNumber] = useState(0);
   const [countToDo, setCountToDo] = useState(0);
@@ -14,11 +14,12 @@ export function ToDoList() {
   function handleCreateToDo(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    setToDo([
-      ...toDo,
-      newToDo
-    ])
+    const newToDoItem: ToDoType = {
+      text: newToDo,
+      id: Date.now()
+    }
 
+    setToDo((prevToDo) => [...prevToDo, newToDoItem])
     setNewToDo('');
   }
 
@@ -26,9 +27,9 @@ export function ToDoList() {
     setNewToDo(event.target.value);
   }
 
-  function deleteToDo(deletedToDo: string) {
+  function deleteToDo(id: number) {
     const toDoList = toDo.filter(todo => {
-      return todo !== deletedToDo;
+      return todo.id !== id;
     })
 
     setToDo(toDoList);
@@ -78,10 +79,10 @@ export function ToDoList() {
         <div>
           {(toDo.length === 0) 
               ? <EmptyToDoList />
-              : toDo.map((todo, index) => {
+              : toDo.map((todo) => {
                   return <ToDo
-                    key={todo+index}
-                    content={todo}
+                    key={todo.id}
+                    todo={todo}
                     onDeleteToDo={deleteToDo}
                     onDecrementNumberOfToDo={decrementNumberOfToDo}
                     onIncrementToDo={incrementToDo}

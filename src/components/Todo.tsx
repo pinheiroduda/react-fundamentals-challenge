@@ -2,16 +2,21 @@ import { CheckCircle, Circle, Trash } from 'phosphor-react'
 import { useState } from 'react'
 import styles from './Todo.module.css'
 
+export type ToDoType = {
+  text: string,
+  id: number,
+}
+
 interface ToDoProps {
-  content: string;
-  onDeleteToDo: (deletedToDo: string) => void;
+  todo: ToDoType;
+  onDeleteToDo: (id: number) => void;
   onDecrementNumberOfToDo: () => void;
   onIncrementToDo: () => void;
   onDecrementToDo: () => void;
 }
 
 export function ToDo({
-  content,
+  todo,
   onDeleteToDo,
   onDecrementNumberOfToDo,
   onIncrementToDo,
@@ -23,8 +28,8 @@ export function ToDo({
     setIsChecked(!isChecked);
   }
 
-  function handleDeleteToDo() {
-    onDeleteToDo(content);
+  function handleDeleteToDo(id: number) {
+    onDeleteToDo(id);
     onDecrementNumberOfToDo();
 
     if (isChecked) {
@@ -54,9 +59,9 @@ export function ToDo({
           className={styles.taskText}
           style={isChecked ? {textDecorationLine: 'line-through'} : {textDecorationLine: 'none'}}
         >
-          {content}
+          {todo.text}
         </p>
-        <button onClick={handleDeleteToDo}>
+        <button onClick={() => handleDeleteToDo(todo.id)}>
           <Trash size={16} className={styles.trashIcon}/>
         </button>
       </div>
