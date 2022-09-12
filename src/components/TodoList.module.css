@@ -84,3 +84,33 @@
   padding: 0.125rem 0.5rem;
   border-radius: 999px;
 }
+
+@media (max-width: 1124px) {
+  .content {
+    padding: 0 18rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .content {
+    padding: 0 12rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 8rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .content {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .content {
+    padding: 0 1rem;
+  }
+}
